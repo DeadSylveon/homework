@@ -1,0 +1,6 @@
+Programming is the process of creating a set of instructions that tell a computer how to perform a task. 
+Programming can be done using a variety of computer programming languages, such as JavaScript, Python, and C++. 
+Created by Pamela Fox.
+Java is a set of computer software and specifications developed by James Gosling at Sun Microsystems,
+which was later acquired by the Oracle Corporation, that provides a system for developing application software and 
+deploying it in a cross-platform computing environment.
