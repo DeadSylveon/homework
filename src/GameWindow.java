@@ -11,6 +11,7 @@ public class GameWindow extends JFrame {
     private static final int WIN_HEIGHT = 555;
     private static final int WIN_POSX = 650;
     private static final int WIN_POSY = 250;
+    public static JPanel cellsButtons;
 
     private Map map;
 
@@ -48,8 +49,25 @@ public class GameWindow extends JFrame {
         setVisible(true);
     }
 
-    void acceptSettings(int mode, int fieldSizeX, int fieldSizeY, int winLen) {
+    public void acceptSettings(int mode, int fieldSizeX, int fieldSizeY, int winLen) {
+        if (cellsButtons != null){
+            remove(cellsButtons);
+            revalidate();
+        }
         map.startNewGame(mode, fieldSizeX, fieldSizeY, winLen);
+        JButton[][] cells = new JButton[fieldSizeX][fieldSizeY];
+        cellsButtons = new JPanel(new GridLayout(fieldSizeX, fieldSizeY));
+        for (int i = 0; i < cells.length; i++) {
+            for (int j = 0; j < cells[i].length; j++) {
+                cells[i][j] = new JButton("");
+                cellsButtons.add(cells[i][j]);
+                cellsButtons.revalidate();
+            }
+        }
+        add(cellsButtons, BorderLayout.CENTER);
+        revalidate();
+        setVisible(true);
+
     }
 
 }
