@@ -1,3 +1,3 @@
-public class Fruit {
+public abstract class Fruit {
 
 }
