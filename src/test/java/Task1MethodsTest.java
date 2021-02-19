@@ -8,12 +8,12 @@ import java.util.Arrays;
 import java.util.Collection;
 
 @RunWith(Parameterized.class)
-public class MainMethodsTest {
+public class Task1MethodsTest {
     private int[] arr;
     private int[] resultArr;
-    private Main main;
+    private Task1 task1;
 
-    public MainMethodsTest(int[] arr, int[] resultArr) {
+    public Task1MethodsTest(int[] arr, int[] resultArr) {
         this.arr = arr;
         this.resultArr = resultArr;
     }
@@ -30,21 +30,21 @@ public class MainMethodsTest {
 
     @Before
     public void before(){
-        main = new Main();
+        task1 = new Task1();
     }
 
     @Test
     public void testAll() {
-        Assert.assertArrayEquals(resultArr, main.arrayWork(arr));
+        Assert.assertArrayEquals(resultArr, task1.arrayWork(arr));
     }
 
     @Test(expected = RuntimeException.class)
     public void testForRuntimeExc() {
-        main.arrayWork(new int[]{});
+        task1.arrayWork(new int[]{});
     }
 
-    @Test(expected = RuntimeException.class)
+    @Test(expected = IllegalArgumentException.class)
     public void testForIllegalArgumentExc() {
-        main.arrayWork(null);
+        task1.arrayWork(null);
     }
 }
